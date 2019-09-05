@@ -29,18 +29,21 @@ $charcoal: #ccc;
   background-color: $error;
 }
 .appName{
-  color: #ccc;
-  text-shadow: 1px 1px 2px rgb(95, 30, 104), 0 0 1em rgb(98, 82, 99), 0 0 0.2em rgb(43, 45, 170);
-  padding-top: 14%;
-  padding-left: 40%;
-  font-size: 400%;
+  // color: #ccc;
+  text-shadow: 1px 1px 2px rgb(51, 48, 233), 0 0 1em rgb(239, 228, 240), 0 0 0.2em rgb(43, 45, 170);
+  font-size: 10vh;
+}
+.appNameContainer{
+  width: 100vh;
+  padding-top: 13vh;
+  padding-left:50vh;
 }
 input{
-  width: 30%;
+  width: 34%;
   text-align: center;
   border-radius: 30px;
-  margin-left: 37%;
-  padding: 0.4%;
+  margin-top: 4%;
+  padding: 1%;
   opacity: 0.6;
 
 }
@@ -63,6 +66,11 @@ input{
 }
 
 body{
-  background: url(./background2.jpg);
+  background: url(./background.jpg);
   font-family: 'Modak', cursive;
+}
+
+a{
+  text-shadow: 1px 1px 2px rgb(51, 48, 233), 0 0 1em rgb(239, 228, 240), 0 0 0.2em rgb(43, 45, 170);
+
 }

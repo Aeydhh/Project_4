@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './App.scss'
 import { Route } from 'react-router-dom'
-
+import Console from './console'
+import Game from './game'
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './header/Header'
 import SignUp from './auth/components/SignUp'
@@ -51,8 +52,12 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
         </main>
+        <div className="appNameContainer">
         <div className="appName">SHUTDOWN</div>
-        <p><input></input></p>
+        {/* <p><input></input></p> */}
+        </div>
+        <Console/>
+        <Game/>
       </React.Fragment>
     )
   }
