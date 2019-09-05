@@ -4,12 +4,14 @@
     margin-left: 40vh;
     border: soild  rgb(241, 232, 232);
     text-align: center;
+    
 } 
 
 .consoleMiniContainer{
-width: 40vh;
-height: 30vh;
-    border: 2px solid rgb(158, 154, 154);
+    /* border-style: outset; */
+    width: 40vh;
+    height: 30vh;
+    border: 2px inset rgb(158, 154, 154);
     border-radius: 8px;
 }
 

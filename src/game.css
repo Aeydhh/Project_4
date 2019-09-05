@@ -14,6 +14,7 @@ height: 30vh;
 }
 
 img.game{
+    background-color: black;
     margin-left: -40vh; 
     text-align: center;
     border: 2px solid white;
