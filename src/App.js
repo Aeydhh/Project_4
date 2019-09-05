@@ -51,6 +51,8 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
         </main>
+        <div className="appName">SHUTDOWN</div>
+        <p><input></input></p>
       </React.Fragment>
     )
   }
