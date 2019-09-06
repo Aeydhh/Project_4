@@ -11,7 +11,7 @@ const Console = (props) => (
    <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{props.title}</h5>
-        <p class="card-text">{props.location}.</p>
+        {/* <p class="card-text">{props.location}.</p> */}
         <p class="card-text"><small class="text-muted">console.js and consoleList.js</small></p>
       </div>
     </div>

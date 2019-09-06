@@ -8,7 +8,7 @@ class ConsolesList extends Component {
  
     }
     componentDidMount() {
-        axios.get("https://cors-anywhere.herokuapp.com/https://eventy-api.herokuapp.com/events.json")
+        axios.get("https://cors-anywhere.herokuapp.com/https://shutdown-2modles-api.herokuapp.com/consoles.json")
             .then(response => {
                 this.setState({ consolePosts: response.data })
                 // console.log(response)
@@ -18,8 +18,8 @@ class ConsolesList extends Component {
         const consolePosts = this.state.consolePosts.map((consolePost, id) => {
             return <Console 
             key={consolePost.id} 
-            image={consolePost.image}
-            title={consolePost.eventName} />
+            image={consolePost.img1}
+            title={consolePost.title} />
         })
         return (
             <div>
