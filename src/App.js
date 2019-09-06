@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.scss'
-import { Route } from 'react-router-dom'
+import { Route, link } from 'react-router-dom'
 import Console from './console'
 import Game from './game'
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
@@ -10,6 +10,7 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import AlertDismissible from './auth/components/AlertDismissible'
+
 
 class App extends Component {
   constructor () {
@@ -39,6 +40,13 @@ class App extends Component {
           <AlertDismissible key={index} variant={alert.type} message={alert.message} />
         ))}
         <main className="container">
+        <Route
+              path="/" exact
+              render={(routeProps) => (
+                <Game/>,
+                <Console/>
+              )}
+            />
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
@@ -52,12 +60,7 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
         </main>
-        <div className="appNameContainer">
-        <div className="appName">SHUTDOWN</div>
-        {/* <p><input></input></p> */}
-        </div>
-        <Console/>
-        <Game/>
+
       </React.Fragment>
     )
   }

@@ -1,24 +1,51 @@
-
- .consoleContainer{
-    margin-top: 10vh;
-    margin-left: 40vh;
-    border: soild  rgb(241, 232, 232);
+.appName{
+    color: #ccc;
+    text-shadow: 1px 1px 2px rgb(51, 48, 233), 0 0 1em rgb(239, 228, 240), 0 0 0.2em rgb(43, 45, 170);
+    font-size: 10vh;
+  }
+  /* .appNameContainer{
+    width: 100vh;
+    padding-top: 13vh;
+    padding-left:30vh;
+  } */
+  input{
+    width: 34%;
+    text-align: center;
+    border-radius: 30px;
+    margin-top: 4%;
+    padding: 1%;
+    opacity: 0.6;
+  
+  }
+ .appNameContainer{
+    /* border: 2px inset rgb(158, 154, 154); */
+    margin-top: 100px;
+    /* border: soild  rgb(241, 232, 232); */
     text-align: center;
     
 } 
 
 .consoleMiniContainer{
-    /* border-style: outset; */
+    padding-top: 30px;
+    margin-left:150px; 
+    text-align: center;
     width: 40vh;
     height: 30vh;
     border: 2px inset rgb(158, 154, 154);
     border-radius: 8px;
+    color: aliceblue;
 }
 
-img{
-    margin-left: -90vh; 
+.consoleMiniContainer:hover{
+    background-color: rgba(51, 48, 233, 0.11);
+    cursor: pointer;
+}
+img.consoleimg{
+    margin-top: 110px;
+    margin-left: -470px; 
     text-align: center;
     border: 2px solid white;
     border-radius: 20px;
-    width: 10vh;
-}
+    width: 90px;
+} 
+
