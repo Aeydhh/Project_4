@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import './game.css'
+import './Console.css'
 
 
-const Game = (props) => (
+const Console = (props) => (
     <div onClick={props.change} className="consoleCard">
     <div className="flex-container">
 
@@ -10,9 +10,9 @@ const Game = (props) => (
    <img src={props.image} className="card_img" width="30%" height="100%" />
    <div class="col-md-8">
       <div class="card-body">
-      <h5 class="card-title">{props.title}</h5>
+        <h5 class="card-title">{props.title}</h5>
         <p class="card-text">{props.location}.</p>
-        <p class="card-text"><small class="text-muted">game.js and gameList.js</small></p>
+        <p class="card-text"><small class="text-muted">console.js and consoleList.js</small></p>
       </div>
     </div>
     </div>
@@ -22,4 +22,4 @@ const Game = (props) => (
 ) 
 
 
-export default Game
+export default Console

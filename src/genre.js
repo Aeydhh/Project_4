@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import GamesList from './gamesList'
-import ConsolesList from './consolesList'
-import { Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './genre.css'
 export class Genre extends Component {
     render() {

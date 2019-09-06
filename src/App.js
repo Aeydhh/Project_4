@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.scss'
-import { Route, link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import GamesList from './gamesList'
 import ConsolesList from './consolesList'
 import Genre from './genre'
