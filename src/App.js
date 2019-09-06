@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import './App.scss'
 import { Route, link } from 'react-router-dom'
-import Console from './console'
-import Game from './game'
+import GamesList from './gamesList'
+import ConsolesList from './consolesList'
+import Genre from './genre'
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './header/Header'
 import SignUp from './auth/components/SignUp'
@@ -40,13 +41,7 @@ class App extends Component {
           <AlertDismissible key={index} variant={alert.type} message={alert.message} />
         ))}
         <main className="container">
-        <Route
-              path="/" exact
-              render={(routeProps) => (
-                <Game/>,
-                <Console/>
-              )}
-            />
+
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
@@ -59,6 +54,18 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
+          <Route path="/games_list" render={() =>(
+            <GamesList/>
+          )}/>
+                  <Route path="/consoles_list" render={() =>(
+            <ConsolesList/>
+          )}/>
+                  <Route
+              path="/" exact
+              render={(routeProps) => (
+                <Genre/>
+              )}
+            />
         </main>
 
       </React.Fragment>

@@ -20,11 +20,13 @@
  .appNameContainer{
     /* border: 2px inset rgb(158, 154, 154); */
     margin-top: 100px;
-    /* border: soild  rgb(241, 232, 232); */
+    border: soild  rgb(241, 232, 232);
     text-align: center;
     
 } 
-
+h1{
+  color: #f1e681;
+}
 .consoleMiniContainer{
     padding-top: 30px;
     margin-left:150px; 
@@ -48,4 +50,41 @@ img.consoleimg{
     border-radius: 20px;
     width: 90px;
 } 
+
+
+
+.gameContainer{
+  margin-top: -40vh;
+  margin-left: 85vh;
+  border: soild  rgb(241, 232, 232);
+  text-align: center;
+} 
+
+.gameMiniContainer{
+  margin-left: -200px; 
+  padding-top: 30px;
+  width: 40vh;
+  height: 30vh;
+  border: 2px solid rgb(158, 154, 154);
+  border-radius: 8px;
+  color: aliceblue;
+
+}
+
+.gameMiniContainer:hover{
+  background-color: rgba(51, 48, 233, 0.11);
+  cursor: pointer;
+}
+
+img.game{
+  background-color: black;
+  margin-left: -45vh; 
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 20px;
+  width: 10vh;
+}
+h1{
+  color: #f1e681;
+}
 
