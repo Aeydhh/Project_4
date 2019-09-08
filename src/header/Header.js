@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 import './Header.scss'
 
 const authenticatedOptions = (
@@ -10,8 +9,9 @@ const authenticatedOptions = (
   </React.Fragment>
 )
 
-const unauthenticatedOptions = (
+let unauthenticatedOptions = (
   <React.Fragment>
+    {/* <Link to="/new_post">New Post</Link> */}
     <Link to="/sign-up">Sign Up</Link>
     <Link to="/sign-in">Sign In</Link>
   </React.Fragment>

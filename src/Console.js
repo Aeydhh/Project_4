@@ -7,7 +7,7 @@ const Console = (props) => (
     <div className="flex-container">
 
   
-   <img src={props.image} className="card_img" width="30%" height="100%" />
+   <img src={props.image1} className="card_img" width="30%" height="100%" />
    <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{props.title}</h5>

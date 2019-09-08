@@ -24,9 +24,7 @@
     text-align: center;
     
 } 
-h1{
-  color: #f1e681;
-}
+
 .consoleMiniContainer{
     padding-top: 30px;
     margin-left:150px; 
@@ -84,7 +82,5 @@ img.game{
   border-radius: 20px;
   width: 10vh;
 }
-h1{
-  color: #f1e681;
-}
+
 

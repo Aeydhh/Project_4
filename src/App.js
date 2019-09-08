@@ -3,6 +3,8 @@ import './App.scss'
 import { Route } from 'react-router-dom'
 import GamesList from './gamesList'
 import ConsolesList from './consolesList'
+import NewConsole from './NewConsole'
+import NewGame from './NewGame'
 import Genre from './genre'
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './header/Header'
@@ -14,7 +16,7 @@ import AlertDismissible from './auth/components/AlertDismissible'
 
 
 class App extends Component {
-  constructor () {
+  constructor() {
     super()
 
     this.state = {
@@ -31,9 +33,8 @@ class App extends Component {
     this.setState({ alerts: [...this.state.alerts, { message, type }] })
   }
 
-  render () {
+  render() {
     const { alerts, user } = this.state
-
     return (
       <React.Fragment>
         <Header user={user} />
@@ -54,18 +55,26 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
-          <Route path="/games_list" render={() =>(
-            <GamesList/>
-          )}/>
-                  <Route path="/consoles_list" render={() =>(
-            <ConsolesList/>
-          )}/>
-                  <Route
-              path="/" exact
-              render={(routeProps) => (
-                <Genre/>
-              )}
-            />
+          <Route path="/new_Console" render={() => (
+            <NewConsole />
+          )} />
+                    <Route path="/new_game" render={() => (
+            <NewGame />
+          )} />
+
+
+          <Route path="/games_list" render={() => (
+            <GamesList />
+          )} />
+          <Route path="/consoles_list" render={() => (
+            <ConsolesList />
+          )} />
+          <Route
+            path="/" exact
+            render={(routeProps) => (
+              <Genre />
+            )}
+          />
         </main>
 
       </React.Fragment>
