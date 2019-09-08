@@ -32,7 +32,7 @@ class NewGame extends Component {
     submitHandler = (gamee) => {
         gamee.preventDefault()
         console.log(this.state);
-        axios.post('https://cors-anywhere.herokuapp.com/https://shutdown-2modles-api.herokuapp.com/consoles.json', this.state)
+        axios.post('https://cors-anywhere.herokuapp.com/https://shutdown-2modles-api.herokuapp.com/games.json', this.state)
             .then(response => {
                 console.log(response);
                 this.props.history.push('/');

@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom'
 import GamesList from './gamesList'
 import ConsolesList from './consolesList'
 import NewConsole from './NewConsole'
+import FullConsole from './FullConsole'
 import NewGame from './NewGame'
 import Genre from './genre'
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
@@ -21,7 +22,8 @@ class App extends Component {
 
     this.state = {
       user: null,
-      alerts: []
+      alerts: [],
+      consolePosts: []
     }
   }
 
@@ -65,6 +67,9 @@ class App extends Component {
 
           <Route path="/games_list" render={() => (
             <GamesList />
+          )} />
+            <Route path="/fullConsole/:id" render={(props) => (
+            <FullConsole {...props}   />
           )} />
           <Route path="/consoles_list" render={() => (
             <ConsolesList />

@@ -27,7 +27,8 @@ class ConsolesList extends Component {
         //consle card content on the list page 
         let consolePosts = this.state.consolePosts.map((consolePost, id) => {
             return <Console
-                key={id}
+                key={consolePost.id}
+                id={consolePost.id}
                 title={consolePost.title}
                 image1={consolePost.img1}
                 image2={consolePost.img2}

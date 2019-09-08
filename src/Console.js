@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import './Console.css'
+import { Link } from 'react-router-dom'
 
 
 const Console = (props) => (
-    <div onClick={props.change} className="consoleCard">
+  <Link to={`/fullConsole/${props.id}`}>
+    <div  className="consoleCard">
     <div className="flex-container">
 
   
@@ -18,6 +20,7 @@ const Console = (props) => (
     </div>
 
 </div>
+</Link>
 
 ) 
 

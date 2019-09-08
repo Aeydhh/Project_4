@@ -10,18 +10,18 @@ class NewConsole extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            title: '',
-            img1: '',
-            img2: '',
-            img3: '',
-            img4: '',
-            emu: '',
-            system: '',
-            video1: '',
-            video2: '',
-            about: '',
-            price: '',
-            buy: '',
+            title: "",
+            img1: "",
+            img2: "",
+            img3: "",
+            img4: "",
+            emu: "",
+            system: "",
+            video1: "",
+            video2: "",
+            about: "",
+            price: "",
+            buy: "",
         }
     }
 
@@ -32,7 +32,7 @@ class NewConsole extends Component {
     submitHandler = (consolee) => {
         consolee.preventDefault()
         console.log(this.state);
-        axios.post('https://cors-anywhere.herokuapp.com/https://shutdown-2modles-api.herokuapp.com/consoles/new', this.state)
+        axios.post('https://cors-anywhere.herokuapp.com/https://shutdown-2modles-api.herokuapp.com/consoles', {title: this.state.title}, {headers: {'origin': 'x-requested-with'}})
             .then(response => {
                 console.log(response);
                 this.props.history.push('/');
