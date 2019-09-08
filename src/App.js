@@ -5,6 +5,7 @@ import GamesList from './gamesList'
 import ConsolesList from './consolesList'
 import NewConsole from './NewConsole'
 import FullConsole from './FullConsole'
+import FullGame from './FullGame'
 import NewGame from './NewGame'
 import Genre from './genre'
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
@@ -23,7 +24,9 @@ class App extends Component {
     this.state = {
       user: null,
       alerts: [],
-      consolePosts: []
+      consolePosts: [],
+      gamePosts: []
+
     }
   }
 
@@ -60,7 +63,7 @@ class App extends Component {
           <Route path="/new_Console" render={() => (
             <NewConsole />
           )} />
-                    <Route path="/new_game" render={() => (
+          <Route path="/new_game" render={() => (
             <NewGame />
           )} />
 
@@ -68,8 +71,12 @@ class App extends Component {
           <Route path="/games_list" render={() => (
             <GamesList />
           )} />
-            <Route path="/fullConsole/:id" render={(props) => (
-            <FullConsole {...props}   />
+          <Route path="/fullConsole/:id" render={(props) => (
+            <FullConsole {...props} />
+          )} />
+
+          <Route path="/FullGame/:id" render={(props) => (
+            <FullGame {...props} />
           )} />
           <Route path="/consoles_list" render={() => (
             <ConsolesList />

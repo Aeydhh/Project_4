@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Console.css'
 
 
 const Game = (props) => (
-    <div onClick={props.clicked} className="consoleCard">
+  <Link to={`/fullGame/${props.id}`}>
+    <div className="consoleCard">
     <div className="flex-container">
 
   
@@ -17,6 +19,7 @@ const Game = (props) => (
     </div>
 
 </div>
+</Link>
 
 ) 
 

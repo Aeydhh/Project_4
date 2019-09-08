@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Console from './Console'
-import FullConsole from './FullConsole'
 import { Link } from 'react-router-dom'
 
 class ConsolesList extends Component {
