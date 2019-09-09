@@ -7,6 +7,7 @@ import NewConsole from './NewConsole'
 import FullConsole from './FullConsole'
 import FullGame from './FullGame'
 import NewGame from './NewGame'
+import updateConsole from './updateConsole'
 import Genre from './genre'
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './header/Header'
@@ -67,10 +68,14 @@ class App extends Component {
             <NewGame />
           )} />
 
-
           <Route path="/games_list" render={() => (
             <GamesList />
           )} />
+
+          <Route path="/updateConsole/:id" render={(props) => (
+            <updateConsole {...props}/>
+          )} />
+
           <Route path="/fullConsole/:id" render={(props) => (
             <FullConsole {...props} />
           )} />

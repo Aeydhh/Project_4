@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 // import consoleContent from './consoleContent'
 import { Button, Input} from "reactstrap";
 
@@ -14,6 +15,16 @@ export class FullGame extends Component {
                 // console.log(response)
             });
     }
+
+    deletGameHandler = (e) => {
+        e.preventDefault();
+        axios.delete(`https://cors-anywhere.herokuapp.com/https://shutdown-2modles-api.herokuapp.com/games/${this.props.match.params.id}.json`)
+            .then(response => {
+                console.log(response)
+            })
+    }
+
+
     render() {
 
         return (
@@ -42,7 +53,7 @@ export class FullGame extends Component {
                              <p class="card-text"><small class="text-muted">consolecontent.js</small></p>
                          </div>
                          <Button color="link">Edit</Button>
-                         <Button color="link">Delete</Button>
+                         <Button color="link" onClick={this.deletGameHandler}>Delete</Button>
                          </div>
                  </div>
 

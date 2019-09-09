@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 // import consoleContent from './consoleContent'
 import { Button, Input } from "reactstrap";
 
@@ -7,6 +8,7 @@ export class FullConsole extends Component {
     state = {
         currentConsole: ''
     }
+    // Show a single console full post
     componentDidMount() {
         axios.get(`https://cors-anywhere.herokuapp.com/https://shutdown-2modles-api.herokuapp.com/consoles/${this.props.match.params.id}.json`)
             .then(response => {
@@ -14,6 +16,16 @@ export class FullConsole extends Component {
                 // console.log(response)
             });
     }
+    // Delet a single console post
+    deletConsoleHandler = (e) => {
+        e.preventDefault();
+        axios.delete(`https://cors-anywhere.herokuapp.com/https://shutdown-2modles-api.herokuapp.com/consoles/${this.props.match.params.id}.json`)
+            .then(response => {
+                console.log(response)
+            })
+    }
+
+
     render() {
 
         return (
@@ -42,8 +54,9 @@ export class FullConsole extends Component {
 
                                 <p class="card-text"><small class="text-muted">consolecontent.js</small></p>
                             </div>
-                            <Button color="link">Edit</Button>
-                            <Button color="link">Delete</Button>
+
+                            <Link to={`/updateConsole/${this.props.match.params.id}`}>Edit</Link>
+                            <Button color="link" onClick={this.deletConsoleHandler}>Delete</Button>
                         </div>
                     </div>
 
