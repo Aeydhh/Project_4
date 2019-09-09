@@ -3,6 +3,8 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 // import consoleContent from './consoleContent'
 import { Button, Input } from "reactstrap";
+import './FullConsole.css'
+
 
 export class FullConsole extends Component {
     state = {
@@ -29,42 +31,46 @@ export class FullConsole extends Component {
     render() {
 
         return (
-            <div>
-                <h1 style={{ color: 'white' }}>{this.state.currentConsole.title}</h1>
-                <div className="consoleCard">
-                    <div className="flex-container">
 
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">{this.state.currentConsole.title}</h5>
-                                <img src={this.state.currentConsole.img1} alt="avatar" className="card_img" width="30%" height="100%" />
-                                <img src={this.state.currentConsole.img2} alt="avatar" className="card_img" width="30%" height="100%" />
-                                <img src={this.state.currentConsole.img3} alt="avatar" className="card_img" width="30%" height="100%" />
-                                <img src={this.state.currentConsole.img3} alt="avatar" className="card_img" width="30%" height="100%" />
-                                <h5 class="card-title">{this.state.currentConsole.platform} platform</h5>
-                                <h5 class="card-title">{this.state.currentConsole.emu} emu</h5>
-                                <h5 class="card-title">{this.state.currentConsole.system}systm</h5>
-                                <h5 class="card-title">{this.state.currentConsole.video1}</h5>
-                                <h5 class="card-title">{this.state.currentConsole.video2}</h5>
-                                <h5 class="card-title">{this.state.currentConsole.info}info</h5>
-                                <h5 class="card-title">{this.state.currentConsole.about}about</h5>
-                                <h5 class="card-title">{this.state.currentConsole.price}price</h5>
-                                <h5 class="card-title">{this.state.currentConsole.buy}buy</h5>
+            <div className="fullpage" >
+                <div className="update">
+                    <Link to={`/updateConsole/${this.props.match.params.id}`}>Edit</Link>
+                    <Button color="link" onClick={this.deletConsoleHandler}>Delete</Button>
+                </div>
+                <h1 className="console-Title" style={{ color: 'white' }}>{this.state.currentConsole.title}</h1>
+                <div>
+                    <div >
 
+                        <div class="c">
+                            <div className="infoContainer">
+                                <p>Platform: <small>{this.state.currentConsole.platform}</small> </p>
+                                <p>Emulator: {this.state.currentConsole.emu} </p>
+                                <p>Systom: {this.state.currentConsole.system}</p>
+                            </div>
+                            <div class="consoleContainer">
 
-                                <p class="card-text"><small class="text-muted">consolecontent.js</small></p>
+                                {/* <h5> {this.state.currentConsole.title}</h5> */}
+                                <p> <img src={this.state.currentConsole.img1} alt="avatar" className="card_img" width="60%" height="100%" /></p>
+                                <p> <img src={this.state.currentConsole.img2} alt="avatar" className="card_img" width="60%" height="100%" /></p>
+                                <p> <img src={this.state.currentConsole.img3} alt="avatar" className="card_img" width="60%" height="100%" /></p>
+                                <p> <img src={this.state.currentConsole.img4} alt="avatar" className="card_img" width="60%" height="100%" /></p>
+                                <p> <video src={this.state.currentConsole.video1} width="520" height="240"></video> </p>
+                                <p><video src={this.state.currentConsole.video2} width="520" height="240"></video>
+                                <p>For more info: <a>{this.state.currentConsole.info}</a></p>
+                                <p>About the Console: {this.state.currentConsole.about}</p> </p>
+                                <p>Price: {this.state.currentConsole.price}</p>
+                                <p>Buy: <a>{this.state.currentConsole.buy}</a></p>
+
                             </div>
 
-                            <Link to={`/updateConsole/${this.props.match.params.id}`}>Edit</Link>
-                            <Button color="link" onClick={this.deletConsoleHandler}>Delete</Button>
                         </div>
                     </div>
 
+
                 </div>
 
-                )
-            }
-}            </div>
+
+            </div>
         )
     }
 }

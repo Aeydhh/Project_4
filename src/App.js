@@ -72,7 +72,7 @@ class App extends Component {
             <GamesList />
           )} />
 
-          <Route path="/updateConsole/:id" render={(props) => (
+          <Route path="/updateConsole/:id/edit" render={(props) => (
             <updateConsole {...props}/>
           )} />
 

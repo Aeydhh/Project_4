@@ -1,0 +1,43 @@
+.console-Title{
+/* border-bottom: 5px outset rgb(4, 0, 255); */
+margin: 30px;
+text-align: center
+}
+
+.fullpage{
+margin-top: 20px;
+border: 5px outset rgba(230, 221, 221, 0.411);
+border: 1px solid;
+padding: 10px;
+box-shadow: 5px 10px 18px #888888;
+padding-left:10px;
+
+}
+
+.update{
+    text-align: right;
+}
+
+.consoleContainer{
+    /* border-style: outset; */
+    text-align: center;
+    color: white;
+    padding: 15px;
+    
+}
+
+
+video{
+    border: 3px outset rgba(219, 221, 217, 0.192);
+    margin: 10px;
+    width : 560;
+} 
+
+.infoContainer{
+    padding-left: 100px;
+     /* border-style: outset; */
+     /* border: 5px outset red; */
+    color: white;
+    padding: 15px; 
+    
+}
