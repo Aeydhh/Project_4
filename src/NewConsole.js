@@ -1,9 +1,7 @@
-
-
 import React, { Component } from 'react'
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
-import { Button, Jumbotron, Form, FormGroup, Label, Input, Row } from "reactstrap";
+import { Button, Form,Label, Input } from "reactstrap";
 import './NewConsole.css';
 
 class NewConsole extends Component {
@@ -32,10 +30,11 @@ class NewConsole extends Component {
     submitHandler = (consolee) => {
         consolee.preventDefault()
         console.log(this.state);
-        axios.post('https://cors-anywhere.herokuapp.com/https://shutdown-2modles-api.herokuapp.com/consoles', {title: this.state.title}, {headers: {'origin': 'x-requested-with'}})
+        axios.post('https://shutdown-2modles-api.herokuapp.com/consoles.json', this.state)
+        // axios.post('https://shutdown-2modles-api.herokuapp.com/consoles', {title: this.state.title}, {headers: {'origin': 'x-requested-with'}})
             .then(response => {
                 console.log(response);
-                this.props.history.push('/');
+                this.props.history.push('/consoles_list');
             })
             .catch(error => {
                 console.log(error);
@@ -50,13 +49,13 @@ class NewConsole extends Component {
         return (
 
 
-            <Jumbotron className="base-container" >
+            <div className="updatepage" >
                 <h1 className="Addingpost">New Console </h1>
 
-                <Row>
+                <div>
 
                     <Form className="Forma" onSubmit={this.submitHandler}>
-                        <FormGroup>
+                       <div className="form-group">
                             <Label for="title">Console Name</Label>
                             <Input
                                 type="text"
@@ -64,8 +63,8 @@ class NewConsole extends Component {
                                 placeholder=" name"
                                 onChange={this.changeHandler}
                             />
-                        </FormGroup>
-                        <FormGroup>
+                        </div>
+                       <div className="form-group">
                             <Label for="exampleUrl">Console image </Label>
                             <Input
                                 type="url"
@@ -93,9 +92,9 @@ class NewConsole extends Component {
                                 placeholder="Console image url"
                                 onChange={this.changeHandler}
                             />
-                        </FormGroup>
+                        </div>
 
-                        <FormGroup>
+                       <div className="form-group">
                             <Label for="emu"> Compatible Emulators</Label>
                             <Input
                                 type="text"
@@ -103,9 +102,9 @@ class NewConsole extends Component {
                                 placeholder="emulator"
                                 onChange={this.changeHandler}
                             />
-                        </FormGroup>
+                        </div>
 
-                        <FormGroup>
+                       <div className="form-group">
                             <Label for="system">Console System</Label>
                             <Input
                                 type="text"
@@ -113,8 +112,8 @@ class NewConsole extends Component {
                                 placeholder="System"
                                 onChange={this.changeHandler}
                             />
-                        </FormGroup>
-                        <FormGroup>
+                        </div>
+                       <div className="form-group">
                             <Label for="video1">Console Video</Label>
                             <Input
                                 type="text"
@@ -130,10 +129,21 @@ class NewConsole extends Component {
                                 placeholder="Video"
                                 onChange={this.changeHandler}
                             />
-                        </FormGroup>
+                        </div>
 
 
-                        <FormGroup>
+
+
+                       <div className="form-group">
+                            <Label for="about">About Console</Label> <br />
+                            <Input
+                                type="textarea"
+                                name="about"
+                                placeholder="Write an Description About the Console "
+                                onChange={this.changeHandler} />
+                        </div>
+
+                        <div className="form-group">
                             <Label for="price">Console Price</Label>
                             <Input
                                 type="text"
@@ -141,17 +151,9 @@ class NewConsole extends Component {
                                 placeholder="0$"
                                 onChange={this.changeHandler}
                             />
-                        </FormGroup>
+                        </div>
 
-                        <FormGroup>
-                            <Label for="about">About Console</Label> <br />
-                            <Input
-                                type="textarea"
-                                name="about"
-                                placeholder="Write an Description About the Console "
-                                onChange={this.changeHandler} />
-                        </FormGroup>
-                        <FormGroup>
+                       <div className="form-group">
                             <Label for="buy">Buy Console </Label>
                             <Input
                                 type="text"
@@ -159,14 +161,14 @@ class NewConsole extends Component {
                                 placeholder="buy console"
                                 onChange={this.changeHandler}
                             />
-                        </FormGroup>
+                        </div>
 
 
                         <Button color="primary" size="sm" type="submit"> Submit </Button>
                     </Form>
 
-                </Row>
-            </Jumbotron>
+                </div>
+            </div>
 
         );
     }

@@ -3,21 +3,22 @@ import axios from 'axios';
 import './updateConsole.css'
 
 
-class updateConsole extends Component {
-
+class updateGame extends Component {
 
     constructor(props) {
         super(props);
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onChangeImg1 = this.onChangeImg1.bind(this);
-        this.onChangeImg1 = this.onChangeImg2.bind(this);
-        this.onChangeImg1 = this.onChangeImg3.bind(this);
-        this.onChangeImg1 = this.onChangeImg4.bind(this);
-        this.onChangeEmu = this.onChangeEmu.bind(this);
+        this.onChangeImg2 = this.onChangeImg2.bind(this);
+        this.onChangeImg3 = this.onChangeImg3.bind(this);
+        this.onChangeImg4 = this.onChangeImg4.bind(this);
+        this.onChangePlatform = this.onChangePlatform.bind(this);
         this.onChangeVid1 = this.onChangeVid1.bind(this);
         this.onChangeVid2 = this.onChangeVid2.bind(this);
-        this.onChangePrice = this.onChangePrice.bind(this);
-        this.onChangeAbout = this.onChangeAbout.bind(this);
+        this.onChangeTry = this.onChangeTry.bind(this);
+        this.onChangeGenre = this.onChangeGenre.bind(this);
+        this.onChangeHitnt = this.onChangeHitnt.bind(this);
+        this.onChangeaboutGame = this.onChangeaboutGame.bind(this);
         this.onChangeBuy = this.onChangeBuy.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
@@ -28,43 +29,47 @@ class updateConsole extends Component {
             img2: "",
             img3: "",
             img4: "",
-            emu: "",
-            system: "",
+            platform: "",
+            aboutgame: "",
             video1: "",
             video2: "",
-            about: "",
-            price: "",
+            genre: "",
+            hitnt: '',
+            try: '',
             buy: "",
 
         }
 
     }
     componentWillMount() {
-        console.log('i am params', this.props.match.params.id);
-
-        axios.get(`https://shutdown-2modles-api.herokuapp.com/consoles/${this.props.match.params.id}`
+   console.log('i am params',this.props.match.params.id);
+   
+        axios.get(`https://cors-anywhere.herokuapp.com/https://shutdown-2modles-api.herokuapp.com/games/${this.props.match.params.id}`
         )
             .then(response => {
                 this.setState({
-                    title: response.data.title,
+                    title: response.title,
                     img1: response.data.img1,
-                    img1: response.data.img2,
-                    img1: response.data.img3,
-                    img1: response.data.img4,
-                    emu: response.data.emu,
-                    system: response.data.system,
+                    platform: response.data.platform,
+                    img2: response.data.img2,
+                    img3: response.data.img3,
+                    img4: response.data.img4,
+                    try: response.data.try,
+                    buy: response.data.buy,
                     video1: response.data.video1,
                     video2: response.data.video2,
-                    price: response.data.price,
-                    about: response.data.about,
-                    buy: response.data.buy,
+                    genre: response.data.genre,
+                    aboutgame: response.data.aboutgame,
+                    hitnt: response.data.hitnt,
+
+
 
                 })
                 console.log(this.state.title)
             })
             .catch(function (error) {
                 console.log(error)
-                console.log("hi", this.state.title)
+                console.log("hi",this.state.title)
 
             })
     }
@@ -94,15 +99,13 @@ class updateConsole extends Component {
 
     onChangeImg4(e) {
         this.setState({
-            img4: e.target.value
+          img4: e.target.value
         });
-    }
-
-
-
-    onChangeEmu(e) {
+      }
+  
+    onChangePlatform(e) {
         this.setState({
-            emu: e.target.value
+            platform: e.target.value
         });
     }
 
@@ -118,26 +121,26 @@ class updateConsole extends Component {
         });
     }
 
-    onChangePrice(e) {
+    onChangeHitnt(e) {
         this.setState({
-            price: e.target.value
+            hitnt: e.target.value
         });
     }
 
-    onChangeSystem(e) {
+    onChangeTry(e) {
         this.setState({
-            system: e.target.value
+            try: e.target.value
+        });
+    }
+    onChangeGenre(e) {
+        this.setState({
+            genre: e.target.value
         });
     }
 
-    onChangeInfo(e) {
+    onChangeaboutGame(e) {
         this.setState({
-            info: e.target.value
-        })
-    }
-    onChangeAbout(e) {
-        this.setState({
-            about: e.target.value
+            aboutgame: e.target.value
         });
     }
 
@@ -146,33 +149,33 @@ class updateConsole extends Component {
             buy: e.target.value
         });
     }
-
+    
     onSubmit(e) {
         e.preventDefault();
         const obj = {
             title: this.state.title,
             img1: this.state.img1,
-            emu: this.state.emu,
-            price: this.state.price,
-            about: this.state.about,
+            platform: this.state.platform,
+            try: this.state.try,
+            aboutgame: this.state.aboutgame,
             img2: this.state.img2,
             img3: this.state.img3,
             img4: this.state.img4,
-            system: this.state.system,
+            genre: this.state.genre,
+            hitnt: this.state.hitnt,
             video1: this.state.video1,
             video2: this.state.video2,
-            info: this.state.info,
             buy: this.state.buy,
         };
-        axios.patch(`https://shutdown-2modles-api.herokuapp.com/consoles/${this.props.match.params.id}`, obj, { headers: { 'origin': 'x-requested-with' } })
+        axios.patch(`https://shutdown-2modles-api.herokuapp.com/games/${this.props.match.params.id}`, obj,  { headers: { 'origin': 'x-requested-with' } })
             .then(res => console.log(res.data));
-            this.props.history.push('/consoles_list');
-        }
+        this.props.history.push('/games_list');
+    }
 
     submitHandler = (consolee) => {
         consolee.preventDefault()
         console.log(this.state);
-        axios.post('https://shutdown-2modles-api.herokuapp.com/consoles', { title: this.state.title }, { headers: { 'origin': 'x-requested-with' } })
+        axios.post('https://shutdown-2modles-api.herokuapp.com/games', { title: this.state.title }, { headers: { 'origin': 'x-requested-with' } })
             .then(response => {
                 console.log(response);
                 this.props.history.push('/');
@@ -187,23 +190,23 @@ class updateConsole extends Component {
     render() {
         return (
             <div className="updatepage">
-                <h3>Edit Console </h3>
+                <h3>Edit Game </h3>
                 <div style={{ marginTop: 20 }}>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
-                            <label> Console Name: </label>
+                            <label> Game Name: </label>
                             <input type="text" className="form-control"
                                 value={this.state.title}
                                 onChange={this.onChangeTitle} />
                         </div>
 
-
                         <div className="form-group">
-                            <label> Image </label>
+                            <label> Image 1</label>
                             <input type="text" className="form-control"
                                 value={this.state.img1}
                                 onChange={this.onChangeImg1} />
                         </div>
+
                         <div className="form-group">
                             <label> Image 2 </label>
                             <input type="text" className="form-control"
@@ -212,67 +215,79 @@ class updateConsole extends Component {
                         </div>
 
                         <div className="form-group">
-                            <label> Image 3 </label>
+                            <label> Image 3</label>
                             <input type="text" className="form-control"
                                 value={this.state.img3}
                                 onChange={this.onChangeImg3} />
                         </div>
 
                         <div className="form-group">
-                            <label> Image 4 </label>
+                            <label> Image 4</label>
                             <input type="text" className="form-control"
                                 value={this.state.img4}
                                 onChange={this.onChangeImg4} />
                         </div>
 
                         <div className="form-group">
-                            <label> Emulator </label>
+                            <label> platform </label>
                             <input type="text" className="form-control"
-                                value={this.state.emu}
-                                onChange={this.onChangeEmu} />
+                                value={this.state.platform}
+                                onChange={this.onChangePlatform} />
                         </div>
 
                         <div className="form-group">
-                            <label> System </label>
+                            <label> About Game </label>
                             <input type="text" className="form-control"
-                                value={this.state.system}
-                                onChange={this.onChangeSystem} />
+                                value={this.state.aboutgame}
+                                onChange={this.onChangeaboutGame} />
                         </div>
 
                         <div className="form-group">
                             <label> Video 1 </label>
                             <input type="text" className="form-control"
                                 value={this.state.video1}
-                                onChange={this.onChangeVid1} />
+                                onChange={this.onChangevideo1} />
                         </div>
 
                         <div className="form-group">
-                            <label> Video 2: </label>
+                            <label> Video 2 </label>
                             <input type="text" className="form-control"
                                 value={this.state.video2}
-                                onChange={this.onChangeVid2} />
+                                onChange={this.onChangevideo2} />
+                        </div>
+
+
+                        <div className="form-group">
+                            <label> Genre </label>
+                            <input type="text" className="form-control"
+                                value={this.state.genre}
+                                onChange={this.onChangeGenre} />
                         </div>
 
                         <div className="form-group">
-                            <label> About </label>
+                            <label> Hints </label>
                             <input type="text" className="form-control"
-                                value={this.state.about}
-                                onChange={this.onChangeAbout} />
+                                value={this.state.hitnt}
+                                onChange={this.onChangeHitnt} />
                         </div>
 
                         <div className="form-group">
-                            <label> Price </label>
+                            <label> Try </label>
                             <input type="text" className="form-control"
-                                value={this.state.price}
-                                onChange={this.onChangePrice} />
+                                value={this.state.try}
+                                onChange={this.onChangeTry} />
                         </div>
 
                         <div className="form-group">
                             <label> Buy </label>
                             <input type="text" className="form-control"
                                 value={this.state.buy}
-                                onChange={this.onChangeBuy} />
+                                onChange={this.onChangebuy} />
                         </div>
+
+
+
+
 
                         <div className="form-group">
                             <input type="submit" value="Update Product " className="btn btn-primary" />
@@ -284,16 +299,4 @@ class updateConsole extends Component {
     }
 }
 
-
-export default updateConsole
-
-
-
-
-
-
-
-
-
-
-
+export default updateGame

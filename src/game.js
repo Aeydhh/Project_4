@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './Console.css'
+import './ConsoleDevice.css'
 
 
 const Game = (props) => (
@@ -13,7 +13,6 @@ const Game = (props) => (
    <div class="col-md-8">
       <div class="card-body">
       <h5 class="card-title">{props.title}</h5>
-        <p class="card-text"><small class="text-muted">game.js and gameList.js</small></p>
       </div>
     </div>
     </div>
