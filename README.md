@@ -1,6 +1,17 @@
 # Welcome to SHUTDOWN 
+**Installation**
 
-No installation required, click [SHUTDOWN](https://eman-sh.github.io/Project_4/) to access the web application!
+Clone the app to your folder:
+``` git clone https://github.com/Eman-sh/Project_4.git ```
+
+Cd to the folder:
+```cd <folder Name>```
+
+Prepare the app by downloading the required files:
+```$ npm install```
+
+Run server
+```$npm start```
 
 This Project is mainly developed for gamers. This website is a blog of my favorite games and gaming consoles  
 
