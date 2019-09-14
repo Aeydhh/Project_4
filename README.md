@@ -7,7 +7,7 @@ Clone the app to your folder:
 Cd to the folder:
 ```cd <folder Name>```
 
-Prepare the app by downloading the required files:
+Download required files:
 ```$ npm install```
 
 Run server
